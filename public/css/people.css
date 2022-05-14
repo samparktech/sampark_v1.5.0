@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Open+Sans:wght@300&family=PT+Sans&family=Roboto:ital,wght@0,100;0,300;1,100&family=Sawarabi+Gothic&display=swap');
+.userDivContainer{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    
+}
+body{
+   margin: 0; 
+   font-family: 'Roboto';
+}
+input{
+    font-family: 'Roboto', sans-serif;
+}
+.header{
+    text-align: center;
+    font-weight: 700;
+}
+.userProfile{
+    margin: auto;
+    width: 80%;
+    overflow-x: hidden;
+}
+.user-container{
+    background: transparent;
+    border: 1px solid rgb(195, 224, 255);
+    border-radius: .125rem;
+    padding: 8px;
+    margin: auto;
+    padding-left: 20px;
+    width: 90%;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    transition: .3s;
+}
+.user-container:hover{
+    transition: .3s;
+ }
+.username-link{
+    text-decoration: none;
+    color: rgb(27, 133, 255);
+}
+.return-link{
+    margin-top: 5vh;
+    text-decoration: none;
+    font-size: 16pt;
+    color: rgb(27, 133, 255);
+}
+.return-link:hover{
+    text-decoration: underline;
+}
+.return-div{
+    display: flex;
+    justify-content: center;
+}
+.user-detail-div{
+    margin-left: 12px;
+}
+.profile-icon-div{
+    margin-top: 15px;
+}
+.profile-icon{
+    width: 73px;
+    object-fit: cover;
+    border-radius: 5rem;
+    height: 73px;
+}
+.share-icon{
+    height: 30px;
+    width: 30px;
+}
+.shareables{
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    margin-bottom: 12px;
+}
+#searchBox{
+    width: 60%;
+    font-size: 16pt;
+    outline: none;
+    border-radius: 5rem;
+    padding: 5px 12px;
+    color: rgb(27, 133, 255);
+    border: 1px solid rgb(195, 224, 255);
+    box-shadow: 0 0 5px 0 rgb(193, 222, 255);
+    background: none;
+}
+#searchBox:focus{
+    border-color: rgb(27, 133, 255);
+}
+
+@media only screen and (max-width : 420px) {
+    .userProfile{
+        width: 95%;
+    }
+    .user-container{
+        width: auto;
+    }
+    #searchBox{
+        width: 80%;
+    }
+}
+
+.search-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5vh;
+    margin-top: 3vh;
+}
+
+#follow-form{
+    display: flex;
+    float: right;
+    right: 15vw;
+    position: absolute;
+}
+#follow-btn{
+    margin-left: 12px;
+    padding: 4px 16px;
+    cursor: pointer;
+    height: fit-content;
+    border: none;
+    font-size: 12pt;
+    margin-top: 9px;
+    border-radius: 5rem;
+    color: #fff;
+    background-color: rgb(255, 19, 117);
+}
+.spacer{
+    width: 100%;
+    background: none;
+    height: 15vh;
+    border: none;
+    margin: 0;
+    padding: 0;
+}

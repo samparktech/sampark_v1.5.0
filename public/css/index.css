@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Open+Sans:wght@300&family=PT+Sans&family=Roboto:ital,wght@0,100;0,300;1,100&family=Sawarabi+Gothic&display=swap');
+body{
+    background-color: #fff;
+    font-family: 'Open sans', sans-serif;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    text-align: center;
+}
+#header{
+    font-size: 44pt;
+}
+a{
+    text-decoration: none;
+    padding: 5px 8px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    border-radius: .225rem;
+    background-color: rgb(45, 129, 255);
+}
+#register{
+    background: none;
+    color: rgb(255, 45, 45);
+    border: 1px solid rgb(255, 45, 45);
+}
+#register:hover{
+    box-shadow: 0 1px 8px 2px rgb(223, 219, 219);
+    background-color: rgb(255, 45, 45);
+    color: #fff;
+}
+#login{
+    background: none;
+    color: rgb(45, 129, 255);
+    border: 1px solid rgb(45, 129, 255);
+}
+#login:hover{
+    background-color: rgb(45, 129, 255);
+    box-shadow: 0 1px 8px 2px rgb(223, 219, 219);
+    color: #fff;
+}

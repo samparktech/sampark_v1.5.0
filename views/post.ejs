@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="/assets/SAMPARK.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/post.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= post.title%> | <%= post.postedBy%></title>
+</head>
+<body>
+    
+    <div class="content">
+      <div class="postContainer">
+        <div class="postHeader">
+          <a href="/dashboard" id="returnLink">< Back</a>
+          <span id="title"><%= post.title%></span>
+        </div>
+        <div class="post">
+          <div class="spacer"></div>
+          <br><br>
+          <div class="postContent">
+            <div class="userInfo">
+              <img id="avatarIcon" src="<%= post.avatarImage%>" alt="" class="avatarIcon">
+              <div class="userCredentials">
+                <a href="/users/<%= post.postedBy%>" class="username"><%= post.postedBy%></a>
+                <p class="postedOn">On <%= post.createdAt.toLocaleDateString()%> at <%= post.createdAt.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }) %></p>
+
+              </div>
+            </div>
+            
+            <div class="postMedia">
+              <%if (post.dataType == 'video'){%>
+                <video muted id="article-img" poster="https://www.canva.com/design/DAE-baY05A4/CWDeEmdptqik0alsl63Cqg/view?utm_content=DAE-baY05A4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class=""
+    controls preload="auto" 
+    >
+    <source src="<%= post.articleImage%>" type='video/mp4' />
+</video>
+                <%} else {%>
+                  <img id="article-img" src="<%= post.articleImage%>" alt="">
+              <%}%>
+            </div>
+            <div class="postDescription">
+              <%=post.post%>
+            </div>
+            <div class="postShareables">
+              <div class="PostEditables">
+                <button onclick="likePost('<%= post.id%>')" class="postEditablesLink">
+                  <img class="like-post post-icons" id="likeIcon" src="https://img.icons8.com/ios/96/000000/like--v1.png"/>
+                </button>
+                <button onclick="document.getElementById('id02').style.display='block'" class="postEditablesLink">
+                  <img class="post-icons" src="https://img.icons8.com/ios/96/000000/share-3.png"/>
+                </button>
+                <button onclick="savePost('<%= post.id%>')" class="postEditablesLink">
+                  <img class="post-icons" src="https://img.icons8.com/ios/96/000000/bookmark-ribbon--v1.png"/>
+                </button>
+              </div>
+            </div>
+            <div class="commentSection">
+              <h5 id="commentsHeader">Comments</h5>
+              <div class="commentBox" id="comment-container">
+                <% for (var i = 0; i < post.comments.length; i++) { %>
+                  <div id="comment" class="comment">
+                    <div class="avatarDiv">
+                      <img id="avatarIcon" src="<%= post.comments[i].avatarImage %>" alt="">
+                    </div>
+                    <!-- <div class="delete-comment-btn"><form action="" method="post"><button type="submit"><img src="https://img.icons8.com/small/30/000000/filled-trash.png"/></button></form></div> -->
+                    <div class="commentDiv">
+                     
+                        <b><a class="commentedBy-link" href="/users/<%= post.comments[i].commentedBy %>">@<%= post.comments[i].commentedBy %></a></b>
+                        <br><b><%= post.comments[i].commentMsg %></b><br>
+                      </div>
+                    </div>
+                <% } %>
+              </div>
+            </div>
+            
+            <br><br><br>
+            <div class="spacer2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

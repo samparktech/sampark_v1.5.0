@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="/assets/SAMPARK.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/user.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= user.username %> | Profile</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="link-container">
+          <a  href="/dashboard"><img class="navigation-icon" src="https://img.icons8.com/fluency-systems-filled/50/000000/home.png"/></a>
+          <a href="/chat"><img class="navigation-icon" src="https://img.icons8.com/fluency-systems-regular/50/000000/speech-bubble-with-dots.png"/></a>
+          <div id="profile-div">
+            <a href="/profile"><img  class="navigation-icon navigation-avatar" src="<%=user.avatarImage%>"/></a>
+          </div>
+          <a href="/people"><img class="navigation-icon" src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"/></a>
+          <div id="logout-div">
+            <a id="logout-link" href="/users/logout"><img class="navigation-icon" src="https://img.icons8.com/external-outline-kendis-lasman/64/000000/external-logout-user-interface-basic-line-outline-kendis-lasman.png"/></a>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+
+          <h1 align="center" id="header">PROFILE</h1>
+          <div class="profile-container">
+              <% if (user.gender == 'Male') {%>
+                <img class="profile-icon" id="user-icon" src="<%= user.avatarImage%>" alt="Profile Picture">
+                <%} else {%>
+                    <img src="<%= user.avatarImage%>" alt="" class="profile-icon" id="user-icon">
+                    <%}%>
+                    <h3 align="center" id="name"><%= user.firstName %> <%= user.lastName %></h3>
+                    
+                    <a href="/users/chat/<%= user.username %>" class="contact-link" id="chat-btn"><img id="chat-icon" src="https://img.icons8.com/color/512/000000/chat--v1.png"/></a>
+                    <a href="/articles/<%= user.username %>" class="posts-link">Posts</a>
+                    <div id="email-container" class="detail-container">
+                        <img class="detail-icon" id="username-icon" src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/512/000000/external-email-business-kiranshastry-lineal-color-kiranshastry.png">
+                        <h3 id="email"><%= user.email %></h3>
+                    </div>
+                    <div id="username-container" class="detail-container">
+                        <img class="detail-icon" id="username-icon" src="https://img.icons8.com/fluency/512/000000/email.png"/>
+                        <h3 id="username"><%= user.username %></h3>
+                    </div>
+                    <div id="gender-container" class="detail-container">
+                        <img class="detail-icon" id="gender-icon" src="https://img.icons8.com/color/512/000000/gender--v1.png"/>
+                        <h3 id="gender"><%= user.gender %></h3>
+                    </div>
+                    <div id="country-container" class="detail-container">
+                        <img class="detail-icon" id="address-icon" src="https://img.icons8.com/fluency/512/000000/globe.png"/>
+                        <h3 id="address"><%= user.country %></h3>
+                    </div>
+                </div>
+            </div>
+            </body>
+            </html>

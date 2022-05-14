@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="/assets/SAMPARK.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/updateprofile.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Profile</title>
+</head>
+<body>
+    <form action="/users/updateprofile" method="post">
+        <h1>Update Profile</h1>
+        <input type="text" value="<%= user.firstName %>" name="firstName" id="firstName" required>
+        <input type="text" name="lastName" id="lastName" value="<%= user.lastName %>" required>
+        <input type="email" name="email" id="email" value="<%= user.email%>" readonly required >
+        <input type="text" name="username" value="<%= user.username%>" id="username" readonly >
+        <input type="text" name="phnumber" id="phnumber" value="<%= user.phnumber %>" required>
+        <input type="number" name="age" id="age" value="<%= user.age %>" required>
+        <input type="text" name="country" id="country" value="<%= user.country %>" required>
+        <select name="gender" id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Rather not say</option>
+        </select>
+        <input type="submit" value="UPDATE">
+    </form>
+</body>
+</html>

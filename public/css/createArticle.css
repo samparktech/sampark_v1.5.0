@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans:wght@300&family=PT+Sans&family=Roboto:ital,wght@0,700;0,300;1,100&family=Sawarabi+Gothic&display=swap');
+body{
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+    margin-top: 10vh;
+    justify-content: center;
+}
+.inputFields{
+    margin: 10px;
+    background: transparent;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12pt;
+    padding: 8px 12px;
+    border-radius: .125rem;
+    border: 1px solid gray;
+    color: rgb(47, 144, 255);
+}
+.inputFields:focus{
+    border: 1px solid rgb(47, 144, 255);
+}
+
+#submitBtn{
+    background: rgb(47, 144, 255);
+    color: #fff;
+    border: none;
+    width: fit-content;
+    padding: 8px 60px;
+    cursor: pointer;
+    border-radius: .125rem;
+    transition: .3s;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+#submitBtn:hover{
+    transition: .3s;
+    background-color: rgb(6, 119, 248);
+}
+#post{
+    height: 15vh;
+}
+
+.format-btn{
+    margin-left: 12px;
+    padding: 8px 8px;
+    width: 40px;
+    border-radius: .225rem;
+    border: 1px solid rgb(128, 126, 126);
+    background: transparent;
+    color: rgb(47, 144, 255);
+    cursor: pointer;
+    outline: none;
+    transition: .3s;
+}
+.format-btn:hover{
+    transition: .3s;
+    border-color: rgb(47, 144, 255);
+    box-shadow:   0 2px 9px 2px rgb(143, 195, 255);
+}
+#return-link{
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    margin: auto;
+    text-decoration: none;
+    background: none;
+    border-radius: .225rem;
+    padding: 5px 20px;
+    color: red;
+    font-weight: 200;
+    font-size: 16pt;
+    margin-top: 5vh;
+    transition: .3s;
+}
+/* #return-link:hover{
+    background-color: crimson;
+    transition: .3s;
+ } */

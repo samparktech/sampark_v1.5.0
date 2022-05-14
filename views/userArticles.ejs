@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="/assets/SAMPARK.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/userArticles.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/layout.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= User.firstName %>'s Posts | Sampark</title>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="link-container">
+      <a  href="/dashboard"><img class="navigation-icon" src="https://img.icons8.com/fluency-systems-filled/50/000000/home.png"/></a>
+      <a href="/chat"><img class="navigation-icon" src="https://img.icons8.com/fluency-systems-regular/50/000000/speech-bubble-with-dots.png"/></a>
+      <div id="profile-div">
+        <a href="/profile"><img  class="navigation-icon navigation-avatar" src="<%=user.avatarImage%>"/></a>
+      </div>
+      <a href="/people"><img class="navigation-icon" src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"/></a>
+      <div id="logout-div">
+        <a id="logout-link" href="/users/logout"><img class="navigation-icon" src="https://img.icons8.com/external-outline-kendis-lasman/64/000000/external-logout-user-interface-basic-line-outline-kendis-lasman.png"/></a>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+
+    <!-- <a class="return-link" href="/dashboard">Return &uarr;</a> -->
+    <h1 style="margin-left: 4vw; font-size: 35pt;" id="postsHeader"><%= User.firstName %>'s Posts,</h1>
+    <div class="search-container">
+      <input onkeyup="search()" name="search" placeholder="Search Posts" id="searchBox">
+    </div>
+    
+    <div class="postContainer">
+      <% if (!posts) { %>
+        <h1 align="center" class="no-post-footer"> <%= User.username %> have no Posts Yet</h1>
+        <%}%>
+        <% posts.forEach(function (post) { %>
+          <div id="post-box" class="postDiv">
+            <% if(post.postedBy == user.username) {%>
+                        <form id="like-form" method="post" action="/articles/delete/<%= post.id %>">
+                          <button  id="likeBtn" type="submit">
+                            <img id="delete-post-icon" src="https://img.icons8.com/material-outlined/96/000000/delete-trash.png"/>      
+                          </button>
+                        </form>
+                        <%}%>
+            <h1 class="title"><%= post.title %> </h1>
+            <%if (post.dataType == 'video'){%>
+              <video id="article-img" poster="https://www.canva.com/design/DAE-baY05A4/CWDeEmdptqik0alsl63Cqg/view?utm_content=DAE-baY05A4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="video-js vjs-default-skin"
+  controls preload="auto" 
+  data-setup='{"example_option":true}'>
+  <source src="<%= post.articleImage%>" type='video/mp4' />
+</video>
+              <%} else {%>
+                <img id="article-img" src="<%= post.articleImage%>" alt="">
+            <%}%>
+              <% if(post.postedBy == user.username) { %>
+                <p class="postedby">Posted by <a class="postedbyUser" href="/profile">@<%= post.postedBy %></a> on <%= post.createdAt.toLocaleDateString()%> at <%= post.createdAt.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }) %></p>
+                <%} else {%>
+                  <p class="postedby">Posted by <a class="postedbyUser" href="/profile">@<%= post.postedBy %></a> on <%= post.createdAt.toLocaleDateString()%> at <%= post.createdAt.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }) %></p>
+                  <%}%>
+                    <h2 class="post"><%= post.post %></h4>
+                    <div class="shareables">
+                      
+                      </div>
+                      <div id="comment-container" class="comment-btn-container">
+                        <form id="commentForm" action="/articles/comment/<%= post.id %>" method="post" class="comment-form">
+                          <input name="commentMsg" id="comment-input" type="text" placeholder="Type Comment" required >
+                          <input class="comment-btn " type="submit" value="ADD">
+                        </form>
+                      </div>
+                      <div class="commentBox" id="comment-container">
+                        <% for (var i = 0; i < post.comments.length; i++) { %>
+                          <div id="comment" class="comment">
+                            <div class="avatarDiv">
+                              <img id="avatarIcon" src="<%= post.comments[i].avatarImage %>" alt="">
+                            </div>
+                            <!-- <div class="delete-comment-btn"><form action="" method="post"><button type="submit"><img src="https://img.icons8.com/small/30/000000/filled-trash.png"/></button></form></div> -->
+                            <div class="commentDiv">
+                              <% if(post.comments[i].commentedBy == user.username) { %>
+                              </b><a class="commentedBy-link" href="/profile">@<%= post.comments[i].commentedBy %> </a></b> 
+                              <% }else { %>
+                                <b><a class="commentedBy-link" href="/users/<%= post.comments[i].commentedBy %>">@<%= post.comments[i].commentedBy %></a></b>
+                                <%}%>
+                                <br><b><%= post.comments[i].commentMsg %></b><br>
+                              </div>
+                            </div>
+                        <% } %>
+                      </div>
+                        </div>
+                        <% }) %>
+                      </div> 
+                      
+                      <div class="spacer"></div>
+                      </div>
+                      <script>
+                        function search() {
+    let search = document.getElementById('searchBox').value
+    search=search.toLowerCase();
+    let title = document.getElementsByClassName('title');
+    let post = document.getElementsByClassName('postDiv');
+    let article = document.getElementsByClassName('post');
+    let postedBy = document.getElementsByClassName('postedbyUser')
+      
+    for (i = 0; i < title.length; i++) { 
+        if (!title[i].innerHTML.toLowerCase().includes(search) && !article[i].innerHTML.toLowerCase().includes(search) && !postedBy[i].innerHTML.toLowerCase().includes(search)) {
+            post[i].style.display="none";           
+          }
+          else {
+            post[i].style.display="block";              
+        }
+    }
+}
+      </script>
+</body>
+</html>

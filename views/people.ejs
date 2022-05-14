@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="/assets/SAMPARK.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/people.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Community | Sampark</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="link-container">
+          <a  href="/dashboard"><img class="navigation-icon" src="https://img.icons8.com/fluency-systems-regular/50/000000/home.png"/></a>
+          <a href="/chat"><img class="navigation-icon" src="https://img.icons8.com/fluency-systems-regular/50/000000/speech-bubble-with-dots.png"/></a>
+          <div id="profile-div">
+            <a href="/profile"><img  class="navigation-icon navigation-avatar" src="<%=user.avatarImage%>"/></a>
+          </div>
+          <a href="/people"><img class="navigation-icon" src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"/></a>
+          <div id="logout-div">
+            <a id="logout-link" href="/users/logout"><img class="navigation-icon" src="https://img.icons8.com/external-outline-kendis-lasman/64/000000/external-logout-user-interface-basic-line-outline-kendis-lasman.png"/></a>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+
+          <h1 id="header" class="header">Our Community</h1>
+          <div class="search-container">
+              <input onkeyup="search()" name="search" placeholder="Search Users" id="searchBox">
+            </div>
+            <div class="userDivContainer">
+
+                <% Users.forEach((User) =>{%>
+                    
+                    <div id="userDiv" class="userProfile">
+                        <div class="user-container">
+                            <div class="profile-icon-div">
+                                <% if (User.gender == 'Male') {%>
+                                    <img class="profile-icon" id="male-icon" src="<%= User.avatarImage%>" alt="Profile Picture">
+                                    <%} else {%>
+                                        <img src="<%= User.avatarImage%>" alt="" class="profile-icon" id="female-icon">
+                                        <%}%>
+                                    </div>
+                                    <div class="user-detail-div">
+                                        <h3 id="name" class="name"><%= User.firstName%> <%= User.lastName%></h3>
+                                        <% if(user.username == User.username) { %>
+                                            <p class="username"><a href="/profile" class="username-link">@<%= user.username %></a></p>
+                                            <p class="following"><b><%= User.followingArray.length %></b> following</p> <p class="following"><b><%= User.followerArray.length %></b> followers</p>
+                                            <% } else {%>
+                                                <p class="following"><b><%= User.followingArray.length %></b> following</p> <p class="following"><b><%= User.followerArray.length %></b> followers</p>
+                                                <p class="username"><a href="/users/<%= User.username %>" class="username-link">@<%= User.username %></a></p>
+                                                <% } %>
+                                                <div class="shareables">
+                                                    <abbr title="Share on WhatsApp"><a id="share-link" href="whatsapp://send?text=<%= user.firstName%> <%= user.lastName%> is using Sampark! Check out his/her profile on http://192.168.1.6:5500/users/<%= user.username%>. Become a member today." class="username-link"><img class="share-icon" src="https://img.icons8.com/color/512/000000/whatsapp--v6.png"/></a></abbr>
+                                                    <abbr title="Share on Twitter"><a  href="https://twitter.com/share?ref_src=twsrc%5Etfw" class=" share-link"><img class="share-icon" src="https://img.icons8.com/color/512/000000/twitter--v1.png"/></a></abbr>
+                                                    <% if (user.username !== User.username) { %>
+                                                        <form id="follow-form" action="/users/follow/<%= User.username %>/<%= user.username %>/<%= User.phnumber %>" method="post"><input id="follow-btn" type="submit" value="Follow"></form>
+                                                        <% for (var i = 0; i < user.followingArray.length; i++) { %>
+                                                            <% if (user.followingArray[i].following == User.username ) { %>
+                                                                <form id="follow-form" action="/users/unfollow/<%= User.username %>/<%= user.username %>" method="post"><input id="follow-btn" type="submit" value="Unfollow"></form>
+                                                                <% } %>
+                                                                <%}%>
+                                                                <%}%>
+                                                            </div>
+                                                        </div>
+                                                    </div>  
+                                                </div>
+                                                <% }) %>
+                                            </div>
+                                                <div class="spacer"></div>
+                                            </div>
+                                            
+                                            <script>
+                                                function search() {
+                                                    let search = document.getElementById('searchBox').value
+                                                    search=search.toLowerCase();
+                                                    let profile = document.getElementsByClassName('userProfile')
+                                                    let name = document.getElementsByClassName('name');
+                                                    let username = document.getElementsByClassName('username');
+                                                    
+    for (i = 0; i < name.length; i++) { 
+        if (!name[i].innerHTML.toLowerCase().includes(search) && !username[i].innerHTML.toLowerCase().includes(search) ) {
+            profile[i].style.display="none";
+          }
+          else {
+            profile[i].style.display="block";
+            
+        }
+    }
+}
+
+if('<%= user.darkMode %>' == 'true'){
+      document.body.style.backgroundColor = 'black';
+      document.body.style.color = 'white';
+      document.getElementById('searchBox').style.background = 'none';
+      document.getElementById('messageBox').style.boxShadow = 'none';
+      document.getElementById('searchBox').style.color = '#fff';
+      document.getElementById('heading').style.textDecoration = 'white'
+    }else if('<%= user.darkMode %>' == 'false') {
+      document.getElementById('heading').style.borderBlockColor = 'black'
+      document.getElementById('searchBox').style.color = 'black';
+      document.body.style.backgroundColor = 'white';
+      document.getElementById('searchBox').style.boxShadow = '0 2px 5px 2px rgb(236, 234, 234)';
+      document.body.style.color = 'black';
+    }
+    document.getElementById('follow-form').addEventListener('submit', (event) => {
+        event.preventDefault();
+        console.log('Submitted')
+    })
+
+    </script>
+</body>
+</html>

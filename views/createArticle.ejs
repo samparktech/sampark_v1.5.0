@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="/assets/SAMPARK.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/createArticle.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="link-container">
+          <a  href="/dashboard"><img class="navigation-icon" src="https://img.icons8.com/fluency-systems-filled/50/000000/home.png"/></a>
+          <a href="/chat"><img class="navigation-icon" src="https://img.icons8.com/fluency-systems-regular/50/000000/speech-bubble-with-dots.png"/></a>
+          <div id="profile-div">
+            <a href="/profile"><img  class="navigation-icon navigation-avatar" src="<%=user.avatarImage%>"/></a>
+          </div>
+          <a href="/people"><img class="navigation-icon" src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"/></a>
+          <div id="logout-div">
+            <a id="logout-link" href="/users/logout"><img class="navigation-icon" src="https://img.icons8.com/external-outline-kendis-lasman/64/000000/external-logout-user-interface-basic-line-outline-kendis-lasman.png"/></a>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+          <form action="/articles/create" enctype="multipart/form-data"  method="post">
+            <h1 class="header" align="center">Create Post</h1>
+            <input class="inputFields" type="text" name="title" id="title" placeholder="Title" required>
+            <div id="format-btn-div">
+                <button class="format-btn" id="bold"><b>B</b></button><button class="format-btn" id="underline"><u>U</u></button><button class="format-btn" id="italic"><i>I</i></button>
+            </div>
+            <select name="fileTypeDropdown" id="fileTypeDropdown" class="inputFields">
+                <option value="image">IMAGE</option>
+                <option value="video">VIDEO</option>
+            </select>
+            <div class="article-image-div">
+                <input onchange="limitFileSize()" class="inputFields" name="articleImage" type="file" id="ArticleImage" required>
+            </div>
+            <textarea maxlength="250" class="inputFields" type="text" name="post" id="post" placeholder="Post (max 250 words)" required></textarea>
+            <input class="inputFields" type="submit" id="submitBtn" value="POST">
+        </form>
+        <a align="center" href="/dashboard" id="return-link">Cancel</a>
+        </div>
+        <script>
+            const formatBtn = document.getElementsByClassName('format-btn');
+            const boldBtn = document.getElementById('bold').addEventListener('click', (e) => {
+                e.preventDefault()
+                const post = document.getElementById('post');
+                if(post.style.fontWeight == 'bold'){
+                    post.style.fontWeight = 'normal';
+                }else{
+                    post.style.fontWeight = 'bold';
+            }
+        })
+        const italicBtn = document.getElementById('italic').addEventListener('click', (e) => {
+            e.preventDefault()
+            const post = document.getElementById('post');
+            if(post.style.fontStyle == 'italic'){
+                post.style.fontStyle = 'normal';
+            }else{
+                post.style.fontStyle = 'italic';
+            }
+        })
+        const underlineBtn = document.getElementById('underline').addEventListener('click', (e) => {
+            e.preventDefault()
+            const post = document.getElementById('post');
+            if(post.style.textDecoration == 'underline'){
+                post.style.textDecoration = 'none';
+            }else{
+                post.style.textDecoration = 'underline';
+            }
+        })
+        if('<%= user.darkMode %>' == 'true'){
+      document.body.style.backgroundColor = 'black';
+      document.body.style.color = 'white';
+      document.getElementById('searchBox').style.background = 'none';
+      document.getElementById('messageBox').style.boxShadow = 'none';
+      document.getElementsByClassName('inputFields').style.color = 'rgb(47, 144, 255)'
+      document.getElementById('searchBox').style.color = '#fff';
+      document.getElementById('heading').style.textDecoration = 'white'
+    }else if('<%= user.darkMode %>' == 'false') {
+      document.getElementById('heading').style.borderBlockColor = 'black'
+      document.getElementById('searchBox').style.color = 'black';
+      document.body.style.backgroundColor = 'white';
+      document.getElementById('searchBox').style.boxShadow = '0 2px 5px 2px rgb(236, 234, 234)';
+      document.body.style.color = 'black';
+    }
+    var uploadField = document.getElementById("fileTypeDropdown");
+
+ function limitFileSize() {
+    if(this.files[0].size > 1048576){
+       alert("File is too big!");
+       this.value = "";
+    };
+};
+    </script>
+</body>
+</html>

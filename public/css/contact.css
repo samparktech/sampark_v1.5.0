@@ -1,0 +1,48 @@
+.header{
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    font-size: 32pt;
+}
+form{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+#message{
+    outline: none;
+    height: 20vh;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    font-size: 14pt;
+    font-family: 'Montserrat';
+    padding: .5em;
+    border: 1px solid black;
+    border-radius: .225rem;
+    font-weight: 200;
+}
+#message:focus{border: 1px solid rgb(31, 136, 255);}
+#submitBtn{
+    background-color: rgb(31, 136, 255);
+    color: #fff;
+    border: none;
+    font-size: 14pt;
+    border-radius: 1rem;
+    cursor: pointer;
+    width: fit-content;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    padding: 5px 52px;
+    margin-top: 20px;
+    transition: .2s;
+}
+#submitBtn:hover{
+    padding: 5px 70px;
+    transition: .2s;
+    box-shadow: 0 0 7px 2px rgb(230, 229, 229);
+}

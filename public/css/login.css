@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Open+Sans:wght@300&family=PT+Sans&family=Roboto:ital,wght@0,100;0,300;1,100&family=Sawarabi+Gothic&display=swap');
+body{
+    background-color: #fff;
+    font-family: 'Open sans', sans-serif;
+}
+input{
+    border: 1px solid black;
+    outline: none;
+    margin-top: 8px;
+    border-radius: 0 ;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    background-color: rgb(233, 240, 253);
+    font-size: 15pt;
+    padding: 8px;
+    width: 100%;
+}
+h1{
+    text-align: center;
+    font-size: 40pt;
+}
+form{
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    padding-top: 25vh;
+}
+input[type="submit"]{
+    background-color: rgb(51, 163, 255);
+    color: #fff;
+    border: none;
+    border-radius: .225rem;
+    padding: 8px 0;
+    width: 100%;
+    margin-top: 12px;
+}
+input[type="submit"]:hover{
+    background-color: rgb(35, 151, 245);
+}
+input:focus{
+    border: 1px solid rgb(35, 151, 245);
+    border-radius: .125rem;
+    background: none;
+}
+p{
+    text-align: center;
+}
+@media only screen and (max-width: 420px) {
+    form{
+        width: 80%;
+    }
+}

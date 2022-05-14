@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Open+Sans:wght@300&family=PT+Sans&family=Roboto:ital,wght@0,100;0,300;1,100&family=Sawarabi+Gothic&display=swap');
+body{
+    background-color: rgb(254, 254, 255);
+    font-family: 'Open sans', sans-serif;
+    font-weight: 200;
+}
+h1{
+    text-align: center;
+    font-size: 35pt;
+    margin-top: 15vh;
+}
+h2{
+    text-align: center;
+    font-size: 30pt;
+    padding: 10px;
+}
+#error-msg{
+    background-color: #fff;
+
+}
+#homeLink{
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
+    text-decoration: none;
+    font-size: 16pt;
+    color: rgb(62, 139, 255);
+    margin: auto;
+}

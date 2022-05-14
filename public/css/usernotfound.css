@@ -1,0 +1,26 @@
+body{
+    font-weight: 200;
+}
+img{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 20vh;
+    height: 30vh;
+    width: 30vh;
+}
+h1{
+    color: grey;
+    font-weight: 100;
+}
+a{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: rgb(47, 120, 255);
+    font-size: 16pt;
+}
+/* #error-code{
+    font-weight: 900;
+} */
+a:hover{text-decoration: underline;}

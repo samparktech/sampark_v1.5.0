@@ -1,0 +1,10 @@
+ssh -i "samparktechInc.pem" ec2-user@ec2-18-204-213-158.compute-1.amazonaws.com
+
+
+
+
+KeyID = AKIAYN6BPLHVHFUPFBDT
+SECRET_KEY_ACCESS = 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 
+
+
+REGION = us-east-1

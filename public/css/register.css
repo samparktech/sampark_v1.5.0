@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Open+Sans:wght@300&family=PT+Sans&family=Roboto:ital,wght@0,100;0,300;1,100&family=Sawarabi+Gothic&display=swap');
+:root{
+    --primary-blue : rgb(51, 163, 255);
+    --primary-dark-blue: rgb(35, 151, 245);
+}
+body{
+    background-color: #fff;
+    font-family: 'Open sans', sans-serif;
+}
+#header{
+    text-align: center;
+    font-size: 40pt;
+}
+form{
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 70%;
+}
+input{
+    outline: none;
+    margin: 10px;
+    font-size: 13pt;
+    border: 1px solid black;
+    border-radius: 0;
+    width: 90%;
+    padding: 8px;
+    border-top: none;
+    border-bottom: none;
+    background-color: rgb(233, 240, 253);
+    border-right: none;
+}
+.accordian{
+    outline: none;
+    margin: 10px;
+    font-size: 13pt;
+    border: 1px solid black;
+    border-radius: 0;
+    width: 90%;
+    padding: 8px;
+    border-top: none;
+    border-bottom: none;
+    background-color: rgb(233, 240, 253);
+    border-right: none;
+}
+select{
+    outline: none;
+    margin: 10px;
+    font-size: 13pt;
+    border: 1px solid black;
+    border-radius: 0;
+    width: 90%;
+    padding: 8px;
+    border-top: none;
+    border-bottom: none;
+    background-color: rgb(233, 240, 253);
+    border-right: none;
+}
+input[type="submit"]{
+    background-color: var(--primary-blue);
+    border: none;
+    color: #fff;
+    padding: 8px;
+    border-radius: .125rem;
+}
+textarea{
+    margin: 10px;
+    padding: 8px;
+    outline: none;
+    font-size: 13pt;
+    height: 10vh;
+    background-color: rgb(233, 240, 253);
+
+    border: 1px solid black;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    width: 90%;
+}
+input:focus{
+    border: 1px solid var(--primary-blue);
+    border-radius: .125rem;
+    background: none;
+}
+select:focus{
+    border: 1px solid var(--primary-blue);
+    border-radius: .125rem;
+    background: none;
+}
+#login-link{
+    text-align: center;
+}
+.two-input-div{
+    /* display: flex;
+    justify-content: left; */
+}
+input[type="submit"]:hover{
+    background-color: var(--primary-dark-blue);
+}
+textarea:focus{
+    border: 1px solid var(--primary-blue);
+    border-radius: .125rem;
+    background: none;
+}
+

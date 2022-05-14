@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans:wght@300&family=PT+Sans&family=Roboto:ital,wght@0,700;0,300;1,100&family=Sawarabi+Gothic&display=swap');
+*{
+    margin: 0;
+}
+body{
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    font-family: 'Roboto';
+}
+
+.sidebar {
+    width: 100%;
+      height: auto;
+      position: fixed;
+      bottom: 0;
+      background-color: #f1f1f1;
+      opacity: .9;
+  }
+  
+  
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    /* margin-top: 8px; */
+  }
+   
+  .sidebar a.active {
+    background-color: rgb(230, 242, 252);
+    transition: .3s;
+    color: white;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: rgb(190, 226, 255);
+    transition: .3s;
+    color: black;
+  }
+  
+  div.content {
+    height: 1000px;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: fixed;
+      bottom: 0;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+    .link-container{
+      margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    }
+  }
+  .link-container{
+    margin: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  }
+  .navigation-icon{
+      height: 27px;
+      width: 27px;
+    }
+    
+    .content{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+.topApp{
+  height: 20%;
+  width: 100%;
+  margin: 0;
+  /* background-image: url('https://cdn.pixabay.com/photo/2021/09/12/07/58/banner-6617553__340.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; */
+}
+.bottomApp{
+  margin: 0;
+  height: 55.5%;
+}
+.userDetails{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  color: #fff;
+  background: transparent;
+}
+.banner{
+  height: 100%;
+  background-image: url('https://cdn.pixabay.com/photo/2021/09/12/07/58/banner-6617553__340.jpg');
+  background-position: center;
+  background-size: cover;
+  aspect-ratio: 10/2;
+  width: 100%;
+  flex-grow: 1;
+
+}
+.avatar{
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+    

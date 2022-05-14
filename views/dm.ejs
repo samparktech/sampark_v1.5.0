@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="/assets/SAMPARK.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/dm.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= userID %> | Chat</title>
+</head>
+<body>
+    <div class="headerDiv">
+        <div class="userDetails">
+            <img src="<%= user.avatarImage%>" alt="" class="avatarImage">
+            <span class="username"><%= user.username %></span>
+        </div>
+    </div>
+    <div class="messagesDiv"></div>
+    <div class="messageInputDiv">
+        <form action="" method="post" id="messageForm">
+            <input placeholder="Message" type="text" class="messageBox">
+            <input type="submit" value="SEND">
+        </form>
+    </div>
+</body>
+</html>

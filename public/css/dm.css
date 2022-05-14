@@ -1,0 +1,69 @@
+.headerDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: rgb(247, 247, 247);
+    border: none;
+    border-bottom: .7px solid grey;
+    opacity: .8;
+    padding: 12px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.avatarImage{
+    height: 64px;
+    width: 64px;
+    object-fit: cover;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 8px;
+}
+
+span{
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+}
+.userDetails{
+    display: flex;
+    flex-direction: column;
+}
+.messageInputDiv{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+    opacity: .8;
+    border: none;
+    border-top: .7px solid black;
+}
+#messageForm{
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+}
+.messageBox{
+    width: 80%;
+    margin: 8px;
+    padding: 5px 12px;
+    outline: none;
+    border: 1px solid grey;
+    border-radius: .225rem;
+    font-size: 15pt;
+    height: 100%;
+}
+input[type="submit"]{
+    padding: 5px 12px;
+    outline: none;
+    height: auto;
+    border: 1px solid grey;
+    border-radius: .225rem;
+    font-size: 15pt;
+    background: transparent;
+    cursor: pointer;
+}

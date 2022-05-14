@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Open+Sans:wght@300&family=PT+Sans&family=Roboto:ital,wght@0,100;0,300;1,100&family=Sawarabi+Gothic&display=swap');
+body{
+    background-color: #fff;
+    font-family: 'Open sans', sans-serif;
+}
+input{
+    border: 1px solid black;
+    outline: none;
+    margin: 12px;
+    font-family: 'Open sans', sans-serif;
+    border-radius: 0 ;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    background-color: rgb(233, 240, 253);
+    font-size: 13pt;
+    padding: 8px;
+    width: 100%;
+}
+h1{
+    text-align: center;
+    font-size: 40pt;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    /* border: 1px solid black; */
+    margin: auto;
+    padding-top: 10vh;
+}
+input[type="submit"]{
+    background-color: rgb(51, 163, 255);
+    color: #fff;
+    border: none;
+    border-radius: .225rem;
+    padding: 8px 0;
+    cursor: pointer;
+}
+input[type="submit"]:hover{
+    background-color: rgb(35, 151, 245);
+    border-radius: .125rem;
+}
+input:focus{
+    border: 1px solid rgb(35, 151, 245);
+    border-radius: .125rem;
+    background: none;
+}
+p{
+    text-align: center;
+}
+#username{
+    cursor: not-allowed;
+}
+
+#email{
+    cursor: not-allowed;
+}
+select{
+    outline: none;
+    margin: 10px;
+    font-size: 13pt;
+    border: 1px solid black;
+    border-radius: 0;
+    width: 103%;
+    padding: 8px;
+    border-top: none;
+    border-bottom: none;
+    background-color: rgb(233, 240, 253);
+    border-right: none;
+}
+select:focus{
+    border: 1px solid rgb(35, 151, 245);
+    border-radius: .125rem;
+    background: none;
+    outline: none;
+    margin: 10px;
+    font-size: 13pt;
+    width: 90%;
+    padding: 8px; 
+}

@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans:wght@300&family=PT+Sans&family=Roboto:ital,wght@0,700;0,300;1,100&family=Sawarabi+Gothic&display=swap');
+:root{
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+.header{
+    padding: 5px 20px;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+input{background: transparent;}
+form{
+    padding: 1em;
+    font-family: 'Roboto', sans-serif;
+    position: fixed;
+    height: fit-content;
+    bottom: 0;
+    width: 100%;
+    
+}
+span{
+    font-family: 'Roboto', sans-serif;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+}
+#messageBoxContainer{
+    display: flex;
+    flex-direction: row;
+}
+#messageBox{
+    text-decoration: none;
+    list-style: none;
+    font-size: 12pt;
+    padding-top: 2px;
+    padding-left: 15px;
+    padding-bottom: 0;
+    padding-right: 15px;
+    width: fit-content;
+    background-color: rgb(235, 235, 235);
+    border: none;
+    color: rgb(0, 0, 0);
+    height: fit-content;
+    border-radius: 1rem;
+    font-weight: 400;
+    margin: 5px 5px;
+    margin-right: 0;
+    text-align: right;
+    border-radius: 15px;
+    font-family: arial;
+    position: relative;
+    margin-top: 8px;
+}
+.avatarImg{
+    object-fit: cover;
+    margin: 5px;
+    border-radius: 5rem;
+    margin-left: 1vw;
+    height: 57px;
+    width: 57px;
+}
+
+  
+  
+@media  screen and (max-width:420px) {
+   #messages{
+       max-height: 72vh;
+       margin-bottom: 10vh;
+   }
+   #messageBox{
+    margin-left: 1vw;
+   }
+   .avatarImg{
+       margin-left: 1vw;
+   }
+}
+li{
+    text-align: left;
+    padding-bottom: 4px;
+    word-wrap: break-word;
+    max-width: 80vw;
+}
+#messages{
+    display: flex;
+    flex-direction: column;
+    float: right;
+    height: auto;
+    max-height: 72vh;
+    width: 100%;
+    margin-bottom: 5vh;
+    overflow-y: scroll;
+}
+#messageBoxContainer{
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 20px;
+}
+#senderLink{
+    font-weight: 700;
+    font-size: 9pt;
+    text-decoration: none;
+    display: flex;
+    justify-content: left;
+    color: rgb(35, 130, 255);
+    margin-bottom: 0;
+    transition: .2s;
+}#senderLink:hover{
+    transition: .2s;
+    text-decoration: underline;
+    padding-left: 5px;
+}
+.typing{
+    width: 100%;
+    text-align: center;
+    color: royalblue;
+    font-weight: 900;
+    height: fit-content;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+#sentOn{
+    font-size: 9pt;
+    color: grey;
+    padding-left: 5px;
+    text-decoration: none;
+}
+#sentOn:hover{
+    text-decoration: none;
+}
+#sentOn{
+
+    font-size: 6pt;
+    padding-top: 5px;
+    padding-left: 12px;
+    margin-top: 0;
+    color: grey;
+}
+#searchBox{
+    font-size: 12pt;
+    outline: none;
+    border: 1px solid black;
+    padding: 5px 12px;
+    display: flex;
+    float: right;
+    margin-top: 5px;
+    width: 50%;
+    border-radius: .5rem;
+}
+#searchBox:focus{
+    border: 1px solid rgb(55, 105, 255);
+}
+#returnLink{
+    text-decoration: none;
+    font-size: 16pt;
+}
+
+.heading{
+    font-size: 18pt;
+}
+
+#input{
+    background: none;
+    color: rgb(35, 130, 255);
+}

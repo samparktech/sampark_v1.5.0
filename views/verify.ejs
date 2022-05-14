@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/verify.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="shortcut icon" href="/assets/SAMPARK.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Account | Sampark</title>
+</head>
+<body>
+    
+    <p>*(Still Under Development, not Working Right Now)</p>
+    <h1 class="header">Verify Your Account </h1>
+    <p class="subheader">Enter Your 6-digit One Time Passcode sent to <b><u><%= user.email %></u></b></p>
+    <form action="/verify/<%= user.username %>" method="post">
+        <input name="otp" type="tel" id="code" placeholder="6-digit OTP">
+        <div class="btn-container">
+            <a href="/profile" class="cancel-btn">CANCEL</a>
+            <input type="submit" value="VERIFY" class="btn verify-btn">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans:wght@300&family=PT+Sans&family=Roboto:ital,wght@0,700;0,300;1,100&family=Sawarabi+Gothic&display=swap');
+body{
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(0, 0, 0);
+    margin: 0;
+}
+input{
+    font-family: 'Roboto', sans-serif;
+}
+
+.sidebar {
+  width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    background-color: #ffffff;
+    opacity: 1;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 9px 4px rgb(216, 216, 216);
+}
+
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  /* margin-top: 8px; */
+}
+ 
+.sidebar a.active {
+  background-color: rgb(230, 242, 252);
+  transition: .3s;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: rgb(190, 226, 255);
+  transition: .3s;
+  color: black;
+}
+
+div.content {
+  /* margin-left: 100px; */
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+  .link-container{
+    margin: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  }
+}
+.link-container{
+  margin: auto;
+display: flex;
+justify-content: space-around;
+flex-direction: row;
+}
+  
+  @media screen and (max-width: 400px) {
+    
+  }
+
+  .navigation-icon{
+    height: 27px;
+    width: 27px;
+  }
+#logout-link:hover{
+    background-color: rgb(255, 173, 173);
+}
+.spacer{
+  width: 100%;
+  background: none;
+  height: 15vh;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.navigation-avatar{
+  height: 37px;
+  width: 37px;
+  margin-top: -4px;
+  object-fit: cover;
+  border-radius: 100%;
+}

@@ -1,0 +1,126 @@
+#header{
+    font-size: 32pt;
+    font-weight: 100;
+}
+h3{
+    font-weight: 200;
+    font-size: 15pt;
+}
+.profile-container{
+    height: auto;
+    width: 60%;
+    background-color: #fff;
+    box-shadow: 0 2px 9px 2px rgb(218, 216, 216);
+    margin: auto;
+    border-radius: .225rem;
+    margin-top: 10vh;
+    padding-bottom: 5vh;
+    overflow: visible;
+    margin-bottom: 5vh;
+}
+
+.detail-container{
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 2px 9px 2px rgb(218, 216, 216); 
+    height: auto;
+    /* min-width: fit-content; */
+    width: 60%;
+    padding-right: 18px;
+    background-color: #fff;
+    color: black;
+    margin: auto;
+    margin-top: 2vh;
+}
+#email{
+    text-align: center;
+    overflow: scroll;
+    /* margin-left: 10vw; */
+}
+@media only screen and (max-width: 450px) {
+    #email{
+    overflow: scroll;
+    }
+    .detail-container{
+        width: 85%;
+    }
+    .profile-container{
+        width: 92%;
+    }
+}
+@media only screen and (max-width : 520px) {
+    .profile-container{
+        width: 90%;
+    }
+    .detail-container{
+        width: 85%;
+    }
+}
+@media only screen and (max-width : 700px) {
+    #email{
+        overflow-x: scroll;
+    }
+}
+.detail-icon{
+    height: 40px;
+    width: 40px;
+    padding-top: 1.6vh;
+    margin-left: 15px;
+    margin-right: 8px;
+    
+}
+#phnumber{
+    color: black;
+    text-decoration: none;
+}
+#chat-icon{
+    height: 45px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    border-radius: 5rem;
+    padding: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 45px;
+    box-shadow: 0 2px 9px 2px rgb(218, 216, 216); 
+    outline: none;
+}
+
+#return-link{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: rgb(47, 120, 255);
+    font-size: 16pt;
+    margin-bottom: 5vh;
+}
+#return-link:hover{text-decoration: underline;}
+
+.posts-link{
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(47, 120, 255);
+    padding: 4px 12px;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    margin: auto;
+    margin-top: 2vh;
+    border-radius: .225rem;
+}
+#name{
+    font-size: 22pt;
+}
+.profile-icon{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top:5vh;
+    /* border: .7px solid grey; */
+    border-radius: 100%;
+    aspect-ratio: 4/4;
+}
