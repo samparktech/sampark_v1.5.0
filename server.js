@@ -105,4 +105,4 @@ app.use('/users', require('./routes/users.js'));
 app.use('/articles', require('./routes/articles'));
 
 // LISTENING APP
-server.listen(process.env.PORT|| 5500 , console.log(`SERVER AT ${PORT}`));
+server.listen(5500 , console.log(`SERVER AT 5500`));
